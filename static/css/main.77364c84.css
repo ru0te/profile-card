@@ -1,0 +1,2 @@
+*{box-sizing:border-box;margin:0;padding:0}body{align-items:center;display:flex;flex-direction:column;font-family:monospace;justify-content:center;min-height:100vh}img{width:100%}.container{border:3px solid #000;gap:2rem;height:fit-content;max-width:350px;padding-bottom:2rem;width:90vw}.container,.content{display:flex;flex-direction:column}.content{gap:1rem;padding:0 1.5rem}.skills{color:#fff;display:flex;flex-wrap:wrap;gap:5px}.skills div{border-radius:5px;padding:5px}
+/*# sourceMappingURL=main.77364c84.css.map*/
