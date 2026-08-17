@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+const App = () => {
+  const image = '../images/user.jpg';
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className='container'>
+      <img src={image} alt='' />
+      <div className='content'>
+        <h1>Eniola Adewale</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Software Engineer. I like anime, food and true crime documentaries.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div className='skills'>
+          <Skill>HTML + CSS</Skill>
+          <Skill>JavaScript</Skill>
+          <Skill>Web Design</Skill>
+          <Skill>Git and Github</Skill>
+          <Skill>React</Skill>
+        </div>
+      </div>
     </div>
   );
-}
+};
+
+const Skill = (props) => {
+  return (
+    <p style={{ backgroundColor: '#000', padding: '5px', borderRadius: '5px' }}>
+      {props.children}
+    </p>
+  );
+};
 
 export default App;
