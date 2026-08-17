@@ -41,3 +41,8 @@ img {
     color: #fff;
     gap: 5px;
 }
+
+.skills div {
+    padding: 5px;
+    border-radius: 5px;
+}
