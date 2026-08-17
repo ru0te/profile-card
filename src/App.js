@@ -2,7 +2,7 @@ const App = () => {
   const image = '/images/user.jpg';
   return (
     <div className='container'>
-      <img src={image} alt='' />
+      <img src={process.env.PUBLIC_URL + image} alt='' />
       <div className='content'>
         <h1>Eniola Adewale</h1>
         <p>
