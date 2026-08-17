@@ -1,5 +1,5 @@
 const App = () => {
-  const image = '../images/user.jpg';
+  const image = '/images/user.jpg';
   return (
     <div className='container'>
       <img src={image} alt='' />
