@@ -1,15 +1,46 @@
+const skills = [
+  {
+    skill: 'HTML+CSS',
+    level: 'advanced',
+    color: '#2662EA',
+  },
+  {
+    skill: 'JavaScript',
+    level: 'intermediate',
+    color: '#EFD81D',
+  },
+  {
+    skill: 'Web Design',
+    level: 'intermediate',
+    color: '#C3DCAF',
+  },
+  {
+    skill: 'Git and GitHub',
+    level: 'intermediate',
+    color: '#E84F33',
+  },
+  {
+    skill: 'React',
+    level: 'beginner',
+    color: '#60DAFB',
+  },
+];
+
 const App = () => {
   return (
     <div className='container'>
       <Avatar />
       <div className='content'>
         <Intro />
-        <div className='skills'>
-          <Skill skill='HTML+CSS' emoji='💪' color='orange' />
-          <Skill skill='JavaScript' emoji='💪' color='green' />
-          <Skill skill='Web Design' emoji='👶' color='orangered' />
-          <Skill skill='React' emoji='💪' color='blue' />
-        </div>
+        <ul className='skills'>
+          {skills.map((item) => (
+            <Skill
+              skill={item.skill}
+              level={item.level}
+              color={item.color}
+            ></Skill>
+          ))}
+        </ul>
       </div>
     </div>
   );
@@ -33,16 +64,30 @@ const Intro = () => {
   );
 };
 
-const Skill = (props) => {
+const Skill = ({ skill, level, color }) => {
+  let levelEmoji;
+  switch (level) {
+    case 'beginner':
+      levelEmoji = '👶';
+      break;
+    case 'intermediate':
+      levelEmoji = '👍';
+      break;
+    case 'advanced':
+      levelEmoji = '💪';
+      break;
+    default:
+      break;
+  }
   return (
-    <div
+    <li
       style={{
-        backgroundColor: props.color,
+        backgroundColor: color,
       }}
     >
-      <span>{props.skill}</span>
-      <span>{props.emoji}</span>
-    </div>
+      <span>{skill}</span>
+      <span>{levelEmoji}</span>
+    </li>
   );
 };
 

@@ -38,11 +38,18 @@ img {
 .skills {
     display: flex;
     flex-wrap: wrap;
-    color: #fff;
     gap: 5px;
 }
 
-.skills div {
+.skills li {
     padding: 5px;
     border-radius: 5px;
+
+    span:last-child {
+        padding-left: 4px;
+    }
+}
+
+ul li {
+    list-style-type: none;
 }
