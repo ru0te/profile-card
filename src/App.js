@@ -1,30 +1,48 @@
 const App = () => {
-  const image = '/images/user.jpg';
   return (
     <div className='container'>
-      <img src={process.env.PUBLIC_URL + image} alt='' />
+      <Avatar />
       <div className='content'>
-        <h1>Eniola Adewale</h1>
-        <p>
-          Software Engineer. I like anime, food and true crime documentaries.
-        </p>
+        <Intro />
         <div className='skills'>
-          <Skill>HTML + CSS</Skill>
-          <Skill>JavaScript</Skill>
-          <Skill>Web Design</Skill>
-          <Skill>Git and Github</Skill>
-          <Skill>React</Skill>
+          <Skill skill='HTML+CSS' emoji='💪' color='orange' />
+          <Skill skill='JavaScript' emoji='💪' color='green' />
+          <Skill skill='Web Design' emoji='👶' color='orangered' />
+          <Skill skill='React' emoji='💪' color='blue' />
         </div>
       </div>
     </div>
   );
 };
 
+const Avatar = () => {
+  return (
+    <img
+      src={process.env.PUBLIC_URL + '/images/user.jpg'}
+      alt='Eniola Adewale'
+    />
+  );
+};
+
+const Intro = () => {
+  return (
+    <>
+      <h1>Eniola Adewale</h1>
+      <p>Software Engineer. I like anime, food and true crime documentaries.</p>
+    </>
+  );
+};
+
 const Skill = (props) => {
   return (
-    <p style={{ backgroundColor: '#000', padding: '5px', borderRadius: '5px' }}>
-      {props.children}
-    </p>
+    <div
+      style={{
+        backgroundColor: props.color,
+      }}
+    >
+      <span>{props.skill}</span>
+      <span>{props.emoji}</span>
+    </div>
   );
 };
 
